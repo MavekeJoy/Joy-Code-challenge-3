@@ -7,19 +7,14 @@ fetch(url)
 .then(response => response.json())
 .then(films => 
 films.map(film => {
-  const title = document.createElement("li")
-
-  title.textContent = film.title
-  title.addEventListener('click',()=> MovieDesc(film.id))
- movie_titles.appendChild(title)
-
+      const title = document.createElement("li");
+      title.textContent = film.title;
+      
+      
  
 
  
-}))
-
-function MovieDesc(filmId) {
-  const urlApi = `${url}/${filmId}`;
+  
   fetch(urlApi)
     .then((res) => res.json())
     .then((movie) => {
