@@ -1,6 +1,6 @@
-const movie_details = document.getElementById("movie-details");
-const movie_titles = document.getElementById("titles");
-const url = "http://localhost:7800/films";
+const film_details = document.getElementById("film-details");
+const film_titles = document.getElementById("titles");
+const url = "http://localhost:5300/films";
 
 
 fetch(url)
@@ -13,7 +13,7 @@ fetch(url)
       
       title.addEventListener('click', () => MovieDesc(film.id));
       
-      movie_titles.appendChild(title);
+      film_titles.appendChild(title);
     });
   });
 
@@ -23,16 +23,16 @@ function MovieDesc(filmId) {
   
   fetch(urlApi)
     .then((res) => res.json())
-    .then((movie) => {
-      const description = document.querySelector("#movie-details");
+    .then((film) => {
+      const description = document.querySelector("#film-details");
       description.innerHTML = `
-        <h1>${movie.title}</h1>
+        <h1>${film.title}</h1>
         <div>
-          <p>${movie.description}</p>
+          <p>${film.description}</p>
         </div>
-        <h1>Movie Starts at: ${movie.showtime}</h1>
-        <h2>Tickets Sold: ${movie.tickets_sold}</h2>
-        <img src="${movie.poster}" alt="${movie.title}">
+        <h1>Movie Starts at: ${film.showtime}</h1>
+        <h2>Tickets Sold: ${film.tickets_sold}</h2>
+        <img src="${film.poster}" alt="${film.title}">
       `;
     });
 }
