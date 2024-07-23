@@ -4,7 +4,7 @@ Flatdango is a web application that allows users to view movie details and purch
 
 ## FEATURES
 - View details of the first movie including its poster, title, runtime, showtime, and available tickets.
-- Purchase tickets for a movie, with real-time updates to the available ticket count.
+- Purchase tickets for a movie.
 
 ## SETUP
 - Cloning the Repository.
